@@ -7,19 +7,27 @@
 //
 
 import UIKit
+import Onboard
 
-class ViewController: UIViewController {
+class ViewController: OnboardingViewController {
 
    override func viewDidLoad() {
+      
+      let firstPage = OnboardingContentViewController(title: "Page Title", body: "Page body goes here.", image: UIImage(named: "icon"), buttonText: "Text For Button") { () -> Void in
+         print("Hello first page")
+      }
+      viewControllers = [firstPage]
+      
+      
       super.viewDidLoad()
-      // Do any additional setup after loading the view, typically from a nib.
    }
-
-   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+   
+   override func setCurrentPage(currentPage: OnboardingContentViewController!) {
+      super.setCurrentPage(currentPage)
+      
+      currentPage.view.backgroundColor = UIColor.blackColor()
+      
    }
-
-
+   
 }
 
