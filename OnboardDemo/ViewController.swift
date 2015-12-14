@@ -13,26 +13,25 @@ class ViewController: OnboardingViewController {
 
    override func viewDidLoad() {
       
-      // Create your Pages before calling the super viewDidLoad
-      let firstPage = OnboardingContentViewController(title: "Page Title", body: "Page body goes here.", image: UIImage(named: "icon"), buttonText: "Text For Button") { () -> Void in
+      // Create & Customzie your Pages before calling the super viewDidLoad
+      let firstPage = OnboardingContentViewController(title: "Page 1", body: "Page body goes here.", image: UIImage(named: "icon"), buttonText: "Text For Button 1") { () -> Void in
+         self.moveNextPage()
          print("Hello first page")
       }
+      firstPage.view.backgroundColor = UIColor.blackColor()
+      
+      let secondPage = OnboardingContentViewController(title: "Page 2", body: "Page body goes here.", image: UIImage(named: "icon"), buttonText: "Text For Button 2") { () -> Void in
+         print("Hello Second page")
+      }
+      secondPage.view.backgroundColor = UIColor.blackColor()
       
       // Append your pages
-      viewControllers = [firstPage]
+      viewControllers = [firstPage, secondPage]
       
       // Call the super viewDidLoad
       super.viewDidLoad()
       
    }
-   
-   override func setCurrentPage(currentPage: OnboardingContentViewController!) {
-      super.setCurrentPage(currentPage)
-      
-      // Customize the current page
-      currentPage.view.backgroundColor = UIColor.blackColor()
-      
-   }
-   
+
 }
 
