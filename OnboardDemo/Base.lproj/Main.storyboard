@@ -19,8 +19,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98624199629999998" green="0.77968657019999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="eM8-ns-riY" kind="show" identifier="SegueIdentifier" id="WQu-wx-6vY"/>
+                    </connections>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="177" y="69"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Tv5-89-D96">
+            <objects>
+                <viewController id="eM8-ns-riY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RA7-aN-Zng"/>
+                        <viewControllerLayoutGuide type="bottom" id="y2o-iA-zvG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xZP-wd-0zq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulation !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXH-YK-ccN">
+                                <rect key="frame" x="201" y="283.5" width="198.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rXH-YK-ccN" firstAttribute="centerX" secondItem="xZP-wd-0zq" secondAttribute="centerX" id="Skl-2B-aGC"/>
+                            <constraint firstItem="rXH-YK-ccN" firstAttribute="centerY" secondItem="xZP-wd-0zq" secondAttribute="centerY" id="mI0-f8-uQP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tWl-eL-MPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="69"/>
         </scene>
     </scenes>
 </document>

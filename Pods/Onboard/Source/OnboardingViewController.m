@@ -70,36 +70,8 @@ static NSString * const kSkipButtonText = @"Skip";
     // store the passed in view controllers array
     self.viewControllers = contents;
     
-    // set the default properties
-    self.shouldMaskBackground = YES;
-    self.shouldBlurBackground = NO;
-    self.shouldFadeTransitions = NO;
-    self.fadePageControlOnLastPage = NO;
-    self.fadeSkipButtonOnLastPage = NO;
-    self.swipingEnabled = YES;
-    self.hidePageControl = NO;
-    
-    self.allowSkipping = NO;
-    self.skipHandler = ^{};
-    
-    // create the initial exposed components so they can be customized
-    self.pageControl = [UIPageControl new];
-    self.pageControl.numberOfPages = self.viewControllers.count;
-    self.pageControl.userInteractionEnabled = NO;
-
-    self.skipButton = [UIButton new];
-    [self.skipButton setTitle:kSkipButtonText forState:UIControlStateNormal];
-    [self.skipButton addTarget:self action:@selector(handleSkipButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-
-    // create the movie player controller
-    self.moviePlayerController = [MPMoviePlayerController new];
-    
-    // Handle when the app enters the foreground.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleAppEnteredForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
-    
     return self;
 }
-
 
 #pragma mark - View life cycle
 
@@ -128,6 +100,30 @@ static NSString * const kSkipButtonText = @"Skip";
 }
 
 - (void)generateView {
+   
+   // set the default properties
+   self.shouldMaskBackground = YES;
+   self.shouldBlurBackground = NO;
+   self.shouldFadeTransitions = NO;
+   self.fadePageControlOnLastPage = NO;
+   self.fadeSkipButtonOnLastPage = NO;
+   self.swipingEnabled = YES;
+   self.hidePageControl = NO;
+   
+   // create the initial exposed components so they can be customized
+   self.pageControl = [UIPageControl new];
+   self.pageControl.numberOfPages = self.viewControllers.count;
+   self.pageControl.userInteractionEnabled = NO;
+   
+   self.skipButton = [UIButton new];
+   [self.skipButton setTitle:kSkipButtonText forState:UIControlStateNormal];
+   [self.skipButton addTarget:self action:@selector(handleSkipButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+   
+   // create the movie player controller
+   self.moviePlayerController = [MPMoviePlayerController new];
+   
+   // Handle when the app enters the foreground.
+   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleAppEnteredForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
    
     // create our page view controller
     _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
