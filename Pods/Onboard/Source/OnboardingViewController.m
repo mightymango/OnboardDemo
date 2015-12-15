@@ -128,7 +128,7 @@ static NSString * const kSkipButtonText = @"Skip";
 }
 
 - (void)generateView {
-      
+   
     // create our page view controller
     _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageVC.view.frame = self.view.frame;
@@ -195,6 +195,7 @@ static NSString * const kSkipButtonText = @"Skip";
     
     // create and configure the page control
     if (!self.hidePageControl) {
+       NSLog(@"HERE?");
         self.pageControl.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame) - self.underPageControlPadding - kPageControlHeight, self.view.frame.size.width, kPageControlHeight);
         [self.view addSubview:self.pageControl];
     }
